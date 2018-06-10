@@ -65,7 +65,7 @@
     <div class="row-fluid">
       <div class="span6">
         <h1>PACE</h1>
-        <h3 class="hs-doc-marquee-description">Automatic page load progress bar</h3>
+        <h3 class="hs-doc-marquee-description">自动的页面加载进度条</h3>
         <p class="hs-doc-marquee-release">
           1.0.2
         </p>
@@ -76,7 +76,7 @@
       </div>
       <div class="span6">
         <div class="hs-doc-marquee-buttons">
-          <a class="hs-doc-marquee-button" href="http://github.com/HubSpot/PACE">Star on GitHub</a><a class="hs-doc-marquee-button" href="http://github.com/HubSpot/PACE/archive/v1.0.2.zip">Download ZIP (v1.0.2)</a>
+          <a class="hs-doc-marquee-button" href="http://github.com/HubSpot/PACE">Star on GitHub</a><a class="hs-doc-marquee-button" href="http://github.com/HubSpot/PACE/archive/v1.0.2.zip">下载 ZIP (v1.0.2)</a>
         </div>
       </div>
     </div>
@@ -88,7 +88,7 @@
       <div class="hs-doc-sidenav">
         <nav>
         <ul class="hs-public-sidenav">
-          <li class="current-nav-item"><a href="">Home</a></li>
+          <li class="current-nav-item"><a href="">首页</a></li>
         </ul>
         </nav>
       </div>
@@ -97,60 +97,56 @@
       <div class="hs-doc-content">
         <h1 id="pace">pace</h1>
         <p>
-          Include <a href="https://raw.github.com/HubSpot/pace/v0.5.3/pace.min.js">pace.js</a> and the
-          <a href="http://github.hubspot.com/pace/docs/welcome/">theme</a> css of your choice on your page
-(as early as is possible), and you&#39;re done!
+          在页面包含<a href="https://raw.github.com/HubSpot/pace/v0.5.3/pace.min.js">pace.js</a> 和
+          <a href="http://github.hubspot.com/pace/docs/welcome/">主题</a> css 文件(越早越好), 就这么简单！
         </p>
         <p>
-          Pace will automatically monitor your ajax requests, event loop lag, document
-ready state, and elements on your page to decide the progress.  On ajax navigation
-it will begin again!
+          Pace将自动监控 ajax 请求、事件循环延迟、文档就绪状态和页面上的元素，以确定进度。在 ajax 导航中，它将再次开始!
         </p>
         <p>
-          If you use AMD or Browserify, require in pace.js and call <code>pace.start()</code> as early in
-the loading process as is possible.
+          如果您使用 AMD 或 Browserify，请require pace.js，并尽可能早地在加载过程中调用 <code>pace.start()</code> 
         </p>
-        <h2 id="wordpress">Install on Wordpress</h2>
+        <h2 id="wordpress">在 Wordpress 上安装</h2>
         <p>
-          You can add PACE to your Wordpress site by installing the <a href="https://wordpress.org/plugins/pace" target="_blank">Wordpress Plugin</a>.
+          可以通过安装这个<a href="https://wordpress.org/plugins/pace" target="_blank">Wordpress 插件</a>来添加 PACE 到你的 Wordpress 站点。
         </p>
-        <h2 id="example">Example</h2>
+        <h2 id="example">示例</h2>
         <pre>
           <code class="lang-html"><span class="tag">&lt;<span class="title">head</span>&gt;</span>
           <span class="tag">&lt;<span class="title">script</span><span class="attribute">src</span>=<span class="value">"/pace/pace.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
           <span class="tag">&lt;<span class="title">link</span><span class="attribute">href</span>=<span class="value">"/pace/themes/pace-theme-barber-shop.css"</span><span class="attribute">rel</span>=<span class="value">"stylesheet"</span> /&gt;</span>
           <span class="tag">&lt;/<span class="title">head</span>&gt;</span></code>
         </pre>
-        <h2 id="configuration">Configuration</h2>
+        <h2 id="configuration">配置</h2>
         <p>
-          Pace is fully automatic, no configuration is necessary to get started.
+          Pace 是全自动的，无需配置就可以开始。
         </p>
         <p>
-          If you would like to make some tweaks, here&#39;s how:
+          如果你想做一些调整，以下是如何:
         </p>
         <p>
-          You can set <code>window.paceOptions</code> before bringing in the file:
+          可以在将文件引入前设置 <code>window.paceOptions</code>：
         </p>
         <pre>
           <code class="lang-javascript">paceOptions = {
-          <span class="comment">// Disable the 'elements' source</span>
+          <span class="comment">// 禁用 '元素' 的来源</span>
   elements: 
           <span class="literal">false</span>,
-          <span class="comment">// Only show the progress on regular and ajax-y page navigation,</span>
-          <span class="comment">// not every request</span>
+          <span class="comment">// 只显示常规和 ajax-y 页面导航的进度条，</span>
+          <span class="comment">// 而不是每个请求</span>
   restartOnRequestAfter: 
           <span class="literal">false</span>
 }
           </code>
         </pre>
         <p>
-          You can also put options on the script tag:
+          你也可以在 script 标签上加上选项:
         </p>
         <pre>
           <code class="lang-html"><span class="tag">&lt;<span class="title">script</span><span class="attribute">data-pace-options</span>=<span class="value">'{ "ajax": false }'</span><span class="attribute">src</span>=<span class="value">'pace.js'</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code>
         </pre>
         <p>
-          If you&#39;re using AMD or Browserify, you can pass your options to <code>start</code>:
+          如果你使用 AMD 或 Browserify, 可以将选项传入 <code>start</code>:
         </p>
         <pre>
           <code class="lang-javascript">define([<span class="string">'pace'</span>], <span class="keyword">function</span>(pace){
@@ -161,15 +157,13 @@ the loading process as is possible.
 });
           </code>
         </pre>
-        <h2 id="themes">Themes</h2>
+        <h2 id="themes">主题</h2>
         <p>
-          Pace includes a bunch of <a href="http://github.hubspot.com/pace/docs/welcome/">themes</a>
-to get you started.  Just include the appropriate css file.  Send us a PR with
-any interesting themes you create.
+          Pace 包含了一系列的<a href="/pace/docs/welcome/">主题</a>来让你快速开始。只要包含适当的 css 文件。
         </p>
-        <h2 id="collectors">Collectors</h2>
+        <h2 id="collectors">收集器</h2>
         <p>
-          Collectors are the bits of code which gather progress information.  Pace includes four default collectors:
+          收集器用来收集进度信息的代码字节数。Pace 包括四个默认收集器:
         </p>
         <ul>
           <li>
@@ -177,7 +171,7 @@ any interesting themes you create.
             Ajax
           </p>
           <p>
-            Monitors all ajax requests on the page
+            监视页面上的所有 ajax 请求。
           </p>
           </li>
           <li>
@@ -185,7 +179,7 @@ any interesting themes you create.
             Elements
           </p>
           <p>
-            Checks for the existance of specific elements on the page
+            检查页面上特定元素的存在性
           </p>
           </li>
           <li>
@@ -193,7 +187,7 @@ any interesting themes you create.
             Document
           </p>
           <p>
-            Checks the document readyState
+            检查文档的 readyState
           </p>
           </li>
           <li>
@@ -201,12 +195,12 @@ any interesting themes you create.
             Event Lag
           </p>
           <p>
-            Checks for event loop lag signaling that javascript is being executed
+            检查正在执行的事件循环滞后信号
           </p>
           </li>
         </ul>
         <p>
-          They can each be configured or disabled through configuration options of the same name.
+          可以通过相同名称的配置选项进行配置或禁用。
         </p>
         <pre>
           <code class="lang-javascript">paceOptions = {
@@ -224,19 +218,12 @@ any interesting themes you create.
           </code>
         </pre>
         <p>
-          Add your own classes to <code>paceOptions.extraSources</code> to add more sources.  Each source should either
-have a 
-          <code>.progress</code> property, or a <code>.elements</code> property which is a list of objects with
-          <code>.progress</code> properties.  Pace will automatically handle all scaling to make the progress
-changes look smooth to the user.
+          向 <code>paceOptions.extraSources</code> 添加自己的类以增加更多的资源。
+          每个源要么有 <code>.progress</code> 属性，要么有 <code>.elements</code> 属性，这个属性是一个带有 <code>.progress</code> 属性的对象列表，Pace 将自动处理所有缩放操作，以使进度更改对用户来说看起来更平滑。
         </p>
         <h2 id="elements">Elements</h2>
         <p>
-          Elements being rendered to the screen is one way for us to decide that the page has been
-rendered.  If you would like to use that source of information (not required at all),
-specify one or more selectors.  You can comma seperate the selectors to propertly handle
-error states, where the progress bar should disappear, but the element we are looking for
-may never appear:
+          元素被渲染到屏幕是我们确定页面已被渲染的一种方式。如果您想使用该信息源(根本不需要)，请指定一个或多个选择器。您可以用逗号分隔选择符，以适当地处理错误状态，在哪里进度条应该消失，但是我们寻找的元素可能永远不会出现:
         </p>
         <pre>
           <code class="lang-javascript">paceOptions = {
@@ -248,16 +235,11 @@ may never appear:
           </code>
         </pre>
         <p>
-          Pace will consider the elements test successful when each selector matches something.  For
-this example, when either 
-          <code>.timeline</code> or <code>.timeline-error</code> exist, and either <code>.user-profile</code>
-or 
-          <code>.profile-error</code> exist.
+          Pace 将考虑在每个选择器匹配某些内容时，元素测试是否成功。对于本例，当存在 <code>.timeline</code> 或 <code>.timeline-error</code>，以及 <code>.user-profile</code> 或 <code>.profile-error</code> 存在时。
         </p>
         <h2 id="restart-rules">Restart Rules</h2>
         <p>
-          Most users want the progress bar to automatically restart when a pushState event occurs
-(generally means ajax navigation is occuring).  You can disable this:
+          大多数用户希望进度条在发生 pushState 事件时自动重新启动(通常意味着出现 ajax 导航)。你可以禁用这个:
         </p>
         <pre>
           <code class="lang-javascript">paceOptions = {
@@ -267,8 +249,8 @@ or
           </code>
         </pre>
         <p>
-          You can also have pace restart on every ajax request which lasts longer than x ms.  You&#39;ll want to
-disable this if you make ajax requests the user doesn&#39;t need to know about, like precaching:
+          您还可以对每一个持续时间超过 x ms的 ajax 请求重新启动 pace。
+          如果您发出用户不需要知道的 ajax 请求，比如预缓存，您将希望禁用该请求:
         </p>
         <pre>
           <code class="lang-javascript">paceOptions = {
@@ -278,70 +260,67 @@ disable this if you make ajax requests the user doesn&#39;t need to know about, 
           </code>
         </pre>
         <p>
-          You can always trigger a restart manually by calling <code>Pace.restart()</code>
+          可以通过调用 <code>Pace.restart()</code> 手动触发重启。
         </p>
         <p>
-          See <a href="https://github.com/HubSpot/pace/blob/master/pace.coffee">the source</a> for a full list of all options.
+          参见 <a href="https://github.com/HubSpot/pace/blob/master/pace.coffee">该源文件</a> 获取完整的选项列表。
         </p>
         <h2 id="api">API</h2>
         <p>
-          Pace exposes the following methods:
+          Pace 暴露了以下方法：
         </p>
         <ul>
           <li>
           <p>
-            <code>Pace.start</code>: Show the progress bar and start updating.  Called automatically if you don&#39;t use AMD or CommonJS.
+            <code>Pace.start</code>: 显示进度条并开始更新。如果不使用 AMD 或 CommonJS，则自动调用。
           </p>
           </li>
           <li>
           <p>
-            <code>Pace.restart</code>: Show the progress bar if it&#39;s hidden and start reporting the progress from scratch.  Called automatically
-whenever 
-            <code>pushState</code> or <code>replaceState</code> is called by default.
+            <code>Pace.restart</code>：如果隐藏了进度条，则显示它，并开始从头报告进度。当默认情况下调用 <code>pushState</code> 或 <code>replaceState</code> 时会自动调用。
           </p>
           </li>
           <li>
           <p>
-            <code>Pace.stop</code>: Hide the progress bar and stop updating it.
+            <code>Pace.stop</code>: 隐藏进度条并停止更新。
           </p>
           </li>
           <li>
           <p>
-            <code>Pace.track</code>: Explicitly track one or more requests, see Tracking below
+            <code>Pace.track</code>: 显式地跟踪一个或多个请求，请参见下面的跟踪
           </p>
           </li>
           <li>
           <p>
-            <code>Pace.ignore</code>: Expliticly ignore one or more requests, see Tracking below
+            <code>Pace.ignore</code>: 忽略一个或多个请求，请参阅下面的跟踪
           </p>
           </li>
         </ul>
-        <h2 id="events">Events</h2>
+        <h2 id="events">事件</h2>
         <p>
-          Pace fires the following events:
+          Pace 会触发以下事件:
         </p>
         <ul>
-          <li><code>start</code>: When pace is initially started, or as a part of a restart</li>
-          <li><code>stop</code>: When pace is manually stopped, or as a part of a restart</li>
-          <li><code>restart</code>: When pace is restarted (manually, or by a new AJAX request)</li>
-          <li><code>done</code>: When pace is finished</li>
-          <li><code>hide</code>: When the pace is hidden (can be later than <code>done</code>, based on <code>ghostTime</code> and <code>minTime</code>)</li>
+          <li><code>start</code>: 当 pace 初始启动时，或者作为重新启动的一部分</li>
+          <li><code>stop</code>: 当 pace 被手动停止时，或者作为重新启动的一部分</li>
+          <li><code>restart</code>: 当 pace 重新启动时(手动地, 或者通过新的 AJAX 请求)</li>
+          <li><code>done</code>: 当 pace 完成时</li>
+          <li><code>hide</code>: 当 pace 隐藏时(可以晚于 <code>done</code>, 基于 <code>ghostTime</code> 和 <code>minTime</code>)</li>
         </ul>
         <p>
-          You can bind onto events using the <code>on</code>, <code>off</code> and <code>once</code> methods:
+          你也可以使用  <code>on</code>，<code>off</code> 和 <code>once</code> 方法绑定到事件：
         </p>
         <ul>
-          <li><code>Pace.on(event, handler, [context])</code>: Call <code>handler</code> (optionally with context) when <code>event</code> is triggered</li>
-          <li><code>Pace.off(event, [handler])</code>: Unbind the provided <code>event</code> and <code>handler</code> combination.</li>
-          <li><code>Pace.once(event, handler, [context])</code>: Bind <code>handler</code> to the next (and only the next) incidence of <code>event</code></li>
+          <li><code>Pace.on(event, handler, [context])</code>: 当 <code>event</code> 被触发时调用 <code>handler</code>（context 是可选的）</li>
+          <li><code>Pace.off(event, [handler])</code>: 解绑所提供的 <code>event</code> 和 <code>handler</code> 结合。</li>
+          <li><code>Pace.once(event, handler, [context])</code>: 绑定 <code>handler</code> 到下一个事件的发生。处理程序仅被触发一次。</li>
         </ul>
-        <h2 id="tracking">Tracking</h2>
+        <h2 id="tracking">跟踪</h2>
         <p>
-          By default, Pace will show any ajax requests which begin as a part of a normal or ajax-y page load, or which last longer than
-500ms.
+          默认情况下，Pace 将显示任何 ajax 请求，这些请求以正常或 ajax-y 页面加载的一部分开始，或者持续时间超过 500ms。
         </p>
         <p>
-          You can disable all ajax tracking by setting <code>ajax</code> to false:
+          你可以通过设置 <code>ajax</code> 为 false 来禁用所有的 ajax 跟踪：
         </p>
         <pre>
           <code class="lang-javascript">Pace.options = {
@@ -351,7 +330,7 @@ whenever
           </code>
         </pre>
         <p>
-          You can disable ajax tracking except on page navigation by setting <code>restartOnRequestAfter</code> to false:
+          可以将 <code>restartOnRequestAfter</code> 设置为 false 来禁用除页面导航之外的 ajax 跟踪:
         </p>
         <pre>
           <code class="lang-javascript">Pace.options = {
@@ -361,7 +340,7 @@ whenever
           </code>
         </pre>
         <p>
-          You can manually disable tracking for a specific request or requests by triggering them within a <code>Pace.ignore</code> callback:
+          您可以通过在 <code>Pace.ignore</code> 回调中触发特定请求来手动禁用对这些请求的跟踪:
         </p>
         <pre>
           <code class="lang-javascript">Pace.ignore(<span class="keyword">function</span>(){
@@ -370,7 +349,7 @@ whenever
           </code>
         </pre>
         <p>
-          You can force the progress bar to be shown for a specific request by triggering them within a <code>Pace.track</code> callback:
+          您可以通过在 <code>Pace.track</code> 回调中触发某个特定请求来强制为这些请求显示进度条:
         </p>
         <pre>
           <code class="lang-javascript">Pace.track(<span class="keyword">function</span>(){
@@ -379,7 +358,7 @@ whenever
           </code>
         </pre>
         <p>
-          You can also ignore URLs based on a pattern:
+          您也可以忽略基于模式的 URL:
         </p>
         <pre>
           <code class="lang-javascript">Pace.options = {
@@ -390,19 +369,17 @@ whenever
 }
           </code>
         </pre>
-        <h2 id="dependencies">Dependencies</h2>
+        <h2 id="dependencies">依赖</h2>
         <p>
-          None!
+          无!
         </p>
-        <h2 id="support">Support</h2>
+        <h2 id="support">支持</h2>
         <p>
-          Pace is designed to support IE8+ (standards mode), FF 3.5+, Chrome, Safari 4+, Opera 10.5+, and all modern
-mobile browsers.  If you run into a compatibility issue, or can make a case for supporting something else,
-please create an issue.
+          Pace支持 IE8+(标准模式)、FF 3.5+、Chrome、Safari 4+、Opera 10.5+ 以及所有现代移动浏览器。如果您遇到兼容性问题，或者可能支持其他东西，请创建一个 issue。
         </p>
-        <h2 id="size">Size</h2>
+        <h2 id="size">大小</h2>
         <p>
-          pace.js is 4kb minified and gzipped.  The themes vary between 0.5 and 4kb.
+          pace.js 压缩后只有 4kb。主题间于 0.5 和 4kb 之间。
         </p>
         <h2 id="issues">Issues</h2>
         <p>
@@ -410,7 +387,7 @@ please create an issue.
 detection could be better, please 
           <a href="https://github.com/HubSpot/pace/issues/new">create an Issue</a>.  If you can include a test case, that&#39;s even better.
         </p>
-        <h2 id="contributing">Contributing</h2>
+        <h2 id="contributing">贡献</h2>
         <p>
           PRs Welcome!
         </p>
@@ -428,7 +405,7 @@ grunt
         <p>
           There is no need to include compiled files in PRs.
         </p>
-        <h2 id="credits">Credits</h2>
+        <h2 id="credits">关于作者</h2>
         <p>
           <a href="http://dev.hubspot.com">HubSpot</a>
         </p>
